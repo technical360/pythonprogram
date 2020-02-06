@@ -1,0 +1,42 @@
+//program to overload class cone to find surface area and volume ,and using keyword "this"
+#include<iostream>
+using namespace std;
+
+class cone//made a class cone
+{
+    int r;
+    int s;
+    int h;
+public:
+    cone(int r, int s)//Area(cone)
+    {
+        this->r=r;//use of keyword "this".it is a class member access operator
+        this->s=s;//The operator-> is used often in conjunction with the pointer-dereference operator * to implement "smart pointers."
+        float area;
+        area = (3.14*r*r)+(3.14*r*s);
+        cout<<"Area= "<< area<< endl;
+    }
+
+    cone(int r, int h, int)//Volume(cone)
+    {
+        this->r=r;//The dereferencing operator-> can be defined as a unary postfix operator
+        this->h=h;
+        float volume;
+        volume=(3.14*r*r*h)/3;
+        cout<<"Volume= "<< volume << endl;
+    }
+};
+
+int main()//Main function
+{
+    int r, s, h;
+    cout<<"Radius: "<< endl;      
+     cin>> r;
+    cout<<"Side Length: "<< endl;  
+    cin>> s;
+    cout<<"Height: "<< endl;       
+    cin>> h;
+    cone ob1(r,s);
+    cone ob2(r,h,s);
+    return 0;
+}
